@@ -2,7 +2,21 @@
 
 Playground for learning pyspark. 
 
-## Getting Started
+### Prerequisites
+
+* Poetry: 
+
+    ```shell
+    curl -sSL https://install.python-poetry.org | python3 -
+    ```
+
+* Java: 
+
+    ```shell
+    sudo apt install default-jre default-jdk
+    ```
+
+### Getting Started
 
 1. Clone the repository
 

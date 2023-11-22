@@ -1,0 +1,21 @@
+﻿direction,location,name,objectid
+Both,Woodward and Grand Blvd,Grand Blvd Station,1
+Both,Woodward and Baltimore,Baltimore St Station,2
+Both,Woodward and Amsterdam,Amsterdam Station,3
+South,Woodward and W Ferry,Ferry Station,4
+North,Woodward and E Ferry,Ferry Station,5
+North,Woodward and E Warren,Warren Station,6
+South,Woodward and W Warren,Warren Station,7
+North,Woodward and E Canfield,Canfield Station,8
+South,Woodward and W Canfield,Canfield Station,9
+North,Woodward and Mack,MLK Jr Station,10
+South,Woodward and Martin Luther King,MLK Jr Station,11
+South,Woodward and Sproat,Sproat Station,12
+North,Woodward and Adelaide,Adelaide Station,13
+South,Woodward and Grand Circus Park,Grand Circus Station,14
+North,Woodward and Grand Circus Park,Grand Circus Station,15
+South,Woodward and Montcalm,Foxtown Station,16
+North,Woodward and Montcalm,Foxtown Station,17
+South,Campus Martius,Campus Martius Station,18
+North,Campus Martius,Campus Martius Station,19
+Both,Woodward and Congress,Congress Station,20
