@@ -10,6 +10,7 @@ python = "^3.10"
 pyspark = "^3.5.0"
 jupyterlab = "^4.0.9"
 pandas = "^2.1.3"
+delta-spark = "^3.0.0"
 
 
 [build-system]
