@@ -18,6 +18,20 @@ The purpose of this project is to investigate how the value of the fantasy footb
 
 ![Architecture](assets/architecture.png)
 
+### Data Target
+
+The data will be stored as a Delta Lake back on S3. The table within the Delta Lake will have the following schema.
+
+```mermaid
+erDiagram
+    PERSON {
+        int Year
+        string Position
+        string Player
+        float FantasyPoints
+    }
+```
+
 ### Prerequisites
 
 * Poetry: 
