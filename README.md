@@ -1,6 +1,22 @@
-# pyspark Playground 
+# Analyzing Fantasy Football Data
 
-Playground for learning pyspark. 
+The purpose of this project is to investigate how the value of the fantasy football has quarterback has changed over time. The following technologies will be used / demonstrated:
+
+**AWS Services**
+
+* S3
+* Glue
+* Database and Tables
+* Triggers
+* Athena
+
+**Data Formats**
+
+* Delta Lake
+
+## Overview
+
+![Architecture](assets/architecture.png)
 
 ### Prerequisites
 
@@ -16,6 +32,8 @@ Playground for learning pyspark.
     sudo apt install default-jre default-jdk
     ```
 
+* AWS Account
+
 ### Getting Started
 
 1. Clone the repository
@@ -25,4 +43,3 @@ Playground for learning pyspark.
     ```shell
     poetry init
     ```
-

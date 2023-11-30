@@ -1,0 +1,82 @@
+<mxfile host="Electron" modified="2023-11-30T19:40:55.198Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/22.1.2 Chrome/114.0.5735.289 Electron/25.9.4 Safari/537.36" etag="med0gcKLVL8JPAtYVGU4" version="22.1.2" type="device">
+  <diagram id="bg6tuWBF0oUyQBfcuXJt" name="Page-1">
+    <mxGraphModel dx="1785" dy="1203" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="sZmkOAatyQL0vVBfTPJV-1" value="" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.athena;fillColor=#F58534;gradientColor=none;" parent="1" vertex="1">
+          <mxGeometry x="720" y="400" width="76.5" height="76.5" as="geometry" />
+        </mxCell>
+        <mxCell id="sZmkOAatyQL0vVBfTPJV-6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="sZmkOAatyQL0vVBfTPJV-3" target="sZmkOAatyQL0vVBfTPJV-5" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sZmkOAatyQL0vVBfTPJV-3" value="" style="sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#7AA116;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.s3;" parent="1" vertex="1">
+          <mxGeometry x="80" y="396" width="78" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="sZmkOAatyQL0vVBfTPJV-13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" parent="1" source="sZmkOAatyQL0vVBfTPJV-4" target="sZmkOAatyQL0vVBfTPJV-18" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="480" y="435" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sZmkOAatyQL0vVBfTPJV-4" value="" style="sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#8C4FFF;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.glue;" parent="1" vertex="1">
+          <mxGeometry x="320" y="396" width="78" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="sZmkOAatyQL0vVBfTPJV-9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="sZmkOAatyQL0vVBfTPJV-5" target="sZmkOAatyQL0vVBfTPJV-4" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="sZmkOAatyQL0vVBfTPJV-5" value="" style="sketch=0;aspect=fixed;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;shape=mxgraph.mscae.enterprise.triggers;fillColor=#0078D7;" parent="1" vertex="1">
+          <mxGeometry x="220" y="410" width="47" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="sZmkOAatyQL0vVBfTPJV-7" value="AWS S3" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="80" y="376" width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="sZmkOAatyQL0vVBfTPJV-8" value="Upload a .csv for each year" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="80" y="490" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sZmkOAatyQL0vVBfTPJV-10" value="Read an existing delta lake file if it exists and then append to it with the incoming .csv.&lt;br&gt;&lt;br&gt;Write the new table back to the delta lake file." style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="320" y="474" width="120" height="146" as="geometry" />
+        </mxCell>
+        <mxCell id="sZmkOAatyQL0vVBfTPJV-11" value="Trigger on .csv landing on S3" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="183.5" y="476.5" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sZmkOAatyQL0vVBfTPJV-23" value="" style="group" parent="1" vertex="1" connectable="0">
+          <mxGeometry x="520" y="396" width="120" height="204" as="geometry" />
+        </mxCell>
+        <mxCell id="sZmkOAatyQL0vVBfTPJV-18" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="sZmkOAatyQL0vVBfTPJV-23" vertex="1">
+          <mxGeometry width="120" height="155" as="geometry" />
+        </mxCell>
+        <mxCell id="sZmkOAatyQL0vVBfTPJV-19" value="" style="group" parent="sZmkOAatyQL0vVBfTPJV-23" vertex="1" connectable="0">
+          <mxGeometry x="20" y="44" width="80" height="98" as="geometry" />
+        </mxCell>
+        <mxCell id="sZmkOAatyQL0vVBfTPJV-16" value="AWS S3" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="sZmkOAatyQL0vVBfTPJV-19" vertex="1">
+          <mxGeometry width="80" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="sZmkOAatyQL0vVBfTPJV-15" value="" style="sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#7AA116;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.s3;" parent="sZmkOAatyQL0vVBfTPJV-19" vertex="1">
+          <mxGeometry y="20" width="78" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="sZmkOAatyQL0vVBfTPJV-20" value="" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#8C4FFF;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.glue_data_catalog;" parent="sZmkOAatyQL0vVBfTPJV-23" vertex="1">
+          <mxGeometry width="30.46" height="33" as="geometry" />
+        </mxCell>
+        <mxCell id="sZmkOAatyQL0vVBfTPJV-21" value="Glue DB/TB" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="sZmkOAatyQL0vVBfTPJV-23" vertex="1">
+          <mxGeometry x="30.460000000000036" width="89.54" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="sZmkOAatyQL0vVBfTPJV-22" value="Create a AWS Glue Database and Table" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="sZmkOAatyQL0vVBfTPJV-23" vertex="1">
+          <mxGeometry y="155" width="120" height="49" as="geometry" />
+        </mxCell>
+        <mxCell id="sZmkOAatyQL0vVBfTPJV-24" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.39;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="sZmkOAatyQL0vVBfTPJV-21" target="sZmkOAatyQL0vVBfTPJV-1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="720" y="430" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="sZmkOAatyQL0vVBfTPJV-26" value="AWS Athena" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="720" y="483" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="sZmkOAatyQL0vVBfTPJV-35" value="Write some SQL querries in Athena to aggregate fantasy points" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="705" y="520" width="110" height="70" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
