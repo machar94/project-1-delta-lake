@@ -87,6 +87,10 @@ erDiagram
     - Correct hadoop-aws package version installed
     - `BUCKET_NAME` set
 
+1. Select the proper kernel (.venv) for the notebook.
+
+    ![Select Kernel](assets/select_kernel.png)
+
 1. Run the cells in the notebook after configuration.
 
 ### Run AWS Glue Crawler
@@ -109,10 +113,30 @@ erDiagram
 
     ![Table Schema](assets/glue_schema.png)
 
+### Glue Job
+
+The job `csv_to_delta.ipynb` reads data from all of the CSV files, extracts the top 12 fantasy performers per position, and writes the data to the delta lake storage layer on S3. The Glue job can be run through a local notebook by connecting to an AWS Interactive Session or by uploading the notebook to the cloud. Follow either of the below instructions.
+
+#### Triggering Locally
+
+1. Add `glue_iam_role=arn:aws:iam::<AccountID>:role/<GlueServiceRole>` to your *~/.aws/config* file. Obtain the proper ARN from IAM > Roles > your-name-glue-delta-lake-project-1. See [Configuring sessions with named profiles](https://docs.aws.amazon.com/glue/latest/dg/interactive-sessions-magics.html) for more details.
+
+1. In a new terminal in the project repo, run `poetry shell`
+
+1. `jupyter notebook`. Copy the jupyter server URL.
+
+1. Open *csv_to_delta.ipynb*, *Select Kernel* -> *Select Another Kernel...* -> Paste URL and select PySpark.
+
+    ![Select Jupyter Server](assets/setup_jupyter.gif)
+
+1. Review the notebook. Set the `BUCKET_NAME` correctly. Then run the notebook.
+
+1. To confirm the write was successfull, navigate to *s3://your-name-delta-lake-project-1/database/top_performers_delta/_delta_log/*. You should observe two .json files. The first representing the initial write transaction, and the second representing the glue jobs table append.
+
+#### Triggering In AWS
+
+### Use Athena To Query
+
 ## Resources
 
 - [https://aws.amazon.com/blogs/big-data/introducing-native-delta-lake-table-support-with-aws-glue-crawlers/](https://aws.amazon.com/blogs/big-data/introducing-native-delta-lake-table-support-with-aws-glue-crawlers/)
-
-1. Create a glue job and trigger it manually to ingest all the .csv files and upload them to the delta lake table
-
-2. Use Athena to query
