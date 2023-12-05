@@ -4,6 +4,21 @@ The goal of this project is to learn how to use the delta lake format to store t
 
 ![Architecture](assets/architecture.png)
 
+**Table Of Contents**
+
+- [Setting Up A Delta Lake For Querying](#setting-up-a-delta-lake-for-querying)
+  - [Prerequisites](#prerequisites)
+  - [Follow Along](#follow-along)
+    - [S3 Bucket](#s3-bucket)
+    - [IAM Permissions](#iam-permissions)
+    - [Initialize Delta Lake](#initialize-delta-lake)
+    - [Run AWS Glue Crawler](#run-aws-glue-crawler)
+    - [Glue Job](#glue-job)
+      - [Triggering Locally](#triggering-locally)
+      - [Triggering In AWS](#triggering-in-aws)
+    - [Use Athena To Query](#use-athena-to-query)
+  - [Resources](#resources)
+
 ## Prerequisites
 
 * Poetry
@@ -24,7 +39,7 @@ The goal of this project is to learn how to use the delta lake format to store t
 
 1. Clone the repository to your local machine
 
-1. Download the required dependencies
+2. Download the required dependencies
 
     ```shell
     poetry init
@@ -44,6 +59,7 @@ The goal of this project is to learn how to use the delta lake format to store t
     ├── database
     │   └── raw
     └── scripts
+        └── temp
     ```
 
 1. Upload all the .csv files *directly* under data to database/raw. Do not upload the .csv files under archive.
@@ -123,9 +139,9 @@ The job `csv_to_delta.ipynb` reads data from all of the CSV files, extracts the 
 
 1. In a new terminal in the project repo, run `poetry shell`
 
-1. `jupyter notebook`. Copy the jupyter server URL.
+1. `jupyter notebook --no-browser`. Copy the jupyter server URL.
 
-1. Open *csv_to_delta.ipynb*, *Select Kernel* -> *Select Another Kernel...* -> Paste URL and select PySpark.
+1. Open *csv_to_delta.ipynb*. *Select Kernel* -> *Select Another Kernel...* -> Paste URL and select Glue PySpark.
 
     ![Select Jupyter Server](assets/setup_jupyter.gif)
 
@@ -135,7 +151,32 @@ The job `csv_to_delta.ipynb` reads data from all of the CSV files, extracts the 
 
 #### Triggering In AWS
 
+1. Create a new notebook job in AWS Glue.
+
+    * Engine: Spark (Python)
+    * Upload Notebook: notebooks/csv_to_delta.ipynb
+    * IAM Role your-name-glue-delta-lake-project-1
+
+1. Save the glue job name to *csv_to_delta*. Run the cells in the notebook.
+
+1. To confirm the write was successfull, navigate to *s3://your-name-delta-lake-project-1/database/top_performers_delta/_delta_log/*. You should observe two .json files. The first representing the initial write transaction, and the second representing the glue jobs table append.
+
 ### Use Athena To Query
+
+1. Open up Query Editor in Athena. Set the *Data *Source* to *AwsDataCatalog* and *Database* to *delta_lake*. Copy and paste the following SQL into the editor and Run.
+
+```SQL
+SELECT year,
+	position,
+	ROUND(AVG(fantasypoints), 1) AS "Fantasy Points"
+FROM "delta_lake"."top_performers_delta"
+GROUP BY year,
+	position
+ORDER BY YEAR desc,
+	position
+```
+
+![Athena Query](assets/sql_query.png)
 
 ## Resources
 
