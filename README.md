@@ -55,7 +55,7 @@ The goal of this project is to learn how to use the delta lake format to store t
 1. Create the following folder structure within the bucket
 
     ```
-    madhav-delta-lake-project-1/
+    your-name-delta-lake-project-1/
     ├── athena
     ├── database
     │   └── raw
