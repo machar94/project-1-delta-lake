@@ -17,6 +17,7 @@ The goal of this project is to learn how to use the delta lake format to store t
       - [Triggering Locally](#triggering-locally)
       - [Triggering In AWS](#triggering-in-aws)
     - [Use Athena To Query](#use-athena-to-query)
+  - [Exploratory Data Analysis](#exploratory-data-analysis)
   - [Resources](#resources)
 
 ## Prerequisites
@@ -131,7 +132,7 @@ erDiagram
 
 ### Glue Job
 
-The job `csv_to_delta.ipynb` reads data from all of the CSV files, extracts the top 12 fantasy performers per position, and writes the data to the delta lake storage layer on S3. The Glue job can be run through a local notebook by connecting to an AWS Interactive Session or by uploading the notebook to the cloud. Follow either of the below instructions.
+The job *csv_to_delta.ipynb* reads data from all of the CSV files, extracts the top 12 fantasy performers per position, and writes the data to the delta lake storage layer on S3. The Glue job can be run through a local notebook by connecting to an AWS Interactive Session or by uploading the notebook to the cloud. Follow either of the below instructions.
 
 #### Triggering Locally
 
@@ -165,19 +166,25 @@ The job `csv_to_delta.ipynb` reads data from all of the CSV files, extracts the 
 
 1. Open up Query Editor in Athena. Set the *Data *Source* to *AwsDataCatalog* and *Database* to *delta_lake*. Copy and paste the following SQL into the editor and Run.
 
-```SQL
-SELECT year,
-	position,
-	ROUND(AVG(fantasypoints), 1) AS "Fantasy Points"
-FROM "delta_lake"."top_performers_delta"
-GROUP BY year,
-	position
-ORDER BY YEAR desc,
-	position
-```
+    ```SQL
+    SELECT year,
+        position,
+        ROUND(AVG(fantasypoints), 1) AS "Fantasy Points"
+    FROM "delta_lake"."top_performers_delta"
+    GROUP BY year,
+        position
+    ORDER BY YEAR desc,
+        position
+    ```
 
-![Athena Query](assets/sql_query.png)
+    ![Athena Query](assets/sql_query.png)
+
+
+## Exploratory Data Analysis
+
+See the *qb_eda.ipynb* for some exploratory data analysis to understand the data.
 
 ## Resources
 
-- [https://aws.amazon.com/blogs/big-data/introducing-native-delta-lake-table-support-with-aws-glue-crawlers/](https://aws.amazon.com/blogs/big-data/introducing-native-delta-lake-table-support-with-aws-glue-crawlers/)
+- [AWS Glue Interactive Sessions](https://docs.aws.amazon.com/glue/latest/dg/interactive-sessions.html)
+- [Using the Delta Lake framework in AWS Glue](https://aws.amazon.com/blogs/big-data/introducing-native-delta-lake-table-support-with-aws-glue-crawlers/)
