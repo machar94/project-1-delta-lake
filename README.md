@@ -48,7 +48,7 @@ The goal of this project is to learn how to use the delta lake format to store t
 
 ### S3 Bucket
 
-1. Create a new S3 bucket. Most of the defualt settings can be left. Remember the bucket name should be unique within AWS.
+1. Create a new S3 bucket. Most of the default settings can be left. Remember the bucket name should be unique within AWS.
 
     ![S3 Bucket](assets/s3_bucket.png)
 
